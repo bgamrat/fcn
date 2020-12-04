@@ -1,0 +1,29 @@
+legend {
+    width: auto;
+}
+#fcn {
+    padding-top: 65px;
+    text-align: right;
+}
+#output {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+@media (min-width: 720px) {
+    .height-controlled fieldset.col-md {
+        height: 175px;
+    }
+    .child-margins fieldset {
+        margin: 0 10px 0 0;
+    }
+}
+@media (min-width: 960px) {
+    .height-controlled,
+    .height-controlled fieldset.col-lg, 
+    .height-controlled fieldset.col-md {
+        height: 275px;
+    }
+    .child-margins fieldset {
+        margin: 0 10px 0 0;
+    }
+}

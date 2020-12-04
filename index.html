@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/34e100283f.js" crossorigin="anonymous"></script>
+        <title>Silly Commuting Race Calculator</title>
+    </head>
+    <body>
+        <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-biking text-white"></i> 
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculator">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rules">Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#about" title="No content">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="top" class="d-none d-md-block jumbotron jumbotron-fluid bg-dark text-white">
+            <div class="container">
+                <h1 class="display-4">Silly Commuting Race Calculator</h1>
+                <p class="lead"><cite><a href="https://forum.bikeradar.com/discussion/12575770/silly-commuting-racing">Silly commuting racing</a></cite></p>
+            </div>
+        </div>
+
+        <article id="calculator" class="container">
+            <header>
+                <h2 class="d-none">Calculator</h2>
+            </header>
+            <div id="fcn" class="sticky-top mt-2">
+                <p class="d-inline-block p-2 bg-dark text-light rounded">FCN <output id="output" class="badge badge-light">0</output></p>
+                <button id="btn-reset" type="button" class="btn btn-light bg-white border border-dark">Reset</button> 
+            </div>
+            <section>
+                <header class="d-none">
+                    <h3>Food Chain Numbers</h3>
+                </header>
+                <form id="fcn-form" class="needs-validation text-secondary" novalidate>
+                    <div class="row">
+                        <fieldset class="col my-1 p-2 border border-success rounded bg-light">
+                            <legend>Bike</legend>
+                            <div class="row">
+                                <div class="col-md pb-2">
+                                    <select class="custom-select">
+                                        <option disabled selected>Bike</option>
+                                        <option value="1">1. Scooters</option>
+                                        <option value="2">2. Roadies with shaved legs - like girls *</option>
+                                        <option value="3">3. Proper rapid Single speed (real men, messengers, tarty shiny fixies) *</option>
+                                        <option value="4">4. Roadies with hairy legs - like men *</option>
+                                        <option value="5">5. Faux Single Speeds (fakengers, dirty/functional bikes, silly egg beater gear) *</option>
+                                        <option value="6">6. Touring Bikes (Mud Guards) *</option>
+                                        <option value="7">7. "Fast Hybrids" *</option>
+                                        <option value="8">8. MTBs on Skinnies *</option>
+                                        <option value="9">9. MTBs on Nobbies</option>
+                                        <option value="10">10. Bromptons / collapsing bikes</option>
+                                        <option value="11">11. MTB full sus on Nobbies</option>
+                                        <option value="12">12. Shoppers</option>
+                                        <option value="13">13. Shoppers wicker baskets</option>
+                                        <option value="14">14. Electric bikes</option>
+                                    </select>
+                                </div>
+                                <div class="col-md">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cb-pedal-adjustment" value="+1">
+                                        <label class="custom-control-label" for="cb-pedal-adjustment"> * Pedal Adjustment +1</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cb-fcn-2-5" value="+1">
+                                        <label class="custom-control-label" for="cb-fcn-2-5"> ONLY FCN 2-5 gain points for overtaking the same FCN and Higher Chainers</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cb-rare" value="+2">
+                                        <label class="custom-control-label" for="cb-rare"> Recumbents, Tandems and Segways are worth +2 points as a rare bonus</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cb-sinclair" value="+20">
+                                        <label class="custom-control-label" for="cb-sinclair"> Sinclair C5 +20 points as a hens teeth bonus</label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <fieldset class="col my-1 p-2 border border-success rounded bg-light">
+                            <legend>Clothing</legend>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="rb-clothing" id="rb-clothing-none" class="custom-control-input" value="+3">
+                                        <label class="custom-control-label" for="rb-clothing-none">None</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="rb-clothing" id="rb-clothing-non-cycling" class="custom-control-input" value="+2">
+                                        <label class="custom-control-label" for="rb-clothing-non-cycling">Non-cycling</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="rb-clothing" id="rb-clothing-baggies" class="custom-control-input" value="+1">
+                                        <label class="custom-control-label" for="rb-clothing-baggies">Baggies</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="rb-clothing" id="rb-clothing-team" class="custom-control-input" value="-1">
+                                        <label class="custom-control-label" for="rb-clothing-team">Team</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="rb-clothing" id="rb-clothing-tdf" class="custom-control-input" value="-2">
+                                        <label class="custom-control-label" for="rb-clothing-tdf">TDF Jersey</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="height-controlled row my-1 child-margins">
+                        <fieldset class="col-lg h-100 d-inline-block p-2 border border-success rounded bg-light">
+                            <legend>Accessories</legend>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-hermans" class="form-check-input" value="+3">
+                                <label class="form-check-label" for="cb-accessories-hermans">Herman's "Safety Wing" (orange plastic lolly-pop)</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-trailer" class="form-check-input" value="+2">
+                                <label class="form-check-label" for="cb-accessories-trailer">Trailer</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-beard" class="form-check-input" value="+1">
+                                <label class="form-check-label" for="cb-accessories-beard">Beard</label>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-2 col-lg-4">
+                                    <input type="number" id="accessories-child-seat" class="form-control form-control-sm" value="0" min="0" max="5">
+                                </div>
+                                <div class="col-10 col-lg-8">
+                                    <label class="form-control-label" for="accessories-child-seat">Child seat (each)</label>
+                                </div>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-powermeter" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="cb-accessories-powermeter">Power meter</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-aerobars" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="cb-accessories-aerobars">Aerobars</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="cb-accessories-colored-tyres" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="cb-accessories-coloured-tyres">Colored Tyres</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="col-lg h-100 d-inline-block p-2 border border-success rounded bg-light">
+                            <legend>Baggage</legend>
+                            <div class="form-check">
+                                <input type="radio" name="rb-baggage" id="rb-baggage-panniers" class="form-check-input" value="+1">
+                                <label class="form-check-label" for="rb-baggage-panniers">Panniers</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-baggage" id="rb-baggage-backpack" class="form-check-input" value="0">
+                                <label class="form-check-label" for="rb-baggage-backpack">Back Pack/Courier</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-baggage" id="rb-baggage-none" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="rb-baggage-none">Nothing</label>
+
+                            </div>
+                        </fieldset>
+                        <fieldset class="col-md d-inline-block p-2 border border-success rounded bg-light">
+                            <legend>Headgear</legend>
+                            <div class="form-check">
+                                <input type="radio" name="rb-headgear" id="rb-headgear-facemask" class="form-check-input" value="+1">
+                                <label class="form-check-label" for="rb-headgear-facemask">Face mask</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-headgear" id="rb-headgear-helmet-etc" class="form-check-input" value="0">
+                                <label class="form-check-label" for="rb-headgear-helmet-etc">Helmet/Nothing/Sunglasses</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-headgear" id="rb-headgear-cap" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="rb-headgear-cap">Bike Caps / Wrap arounds</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="col-md d-inline-block p-2 border border-success rounded bg-light">
+                            <legend>Pedals</legend>
+                            <p><small class="d-none d-lg-inline">(If you can identify) FCN2-8 see note above</small></p>
+                            <div class="form-check">
+                                <input type="radio" name="rb-pedals" id="rb-pedals-flats" class="form-check-input" value="+1">
+                                <label class="form-check-label" for="rb-pedals-flats">Flats</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-pedals" id="rb-pedals-toe-clips" class="form-check-input" value="0">
+                                <label class="form-check-label" for="rb-pedals-toe-clips">Toe Clips</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="rb-pedals" id="rb-pedals-spds" class="form-check-input" value="-1">
+                                <label class="form-check-label" for="rb-pedals-spds">Evidently Clipless/spds (cycling shoes)</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </section>
+        </article>
+
+        <article id="rules" class="container">
+            <header>
+                <h2>Rules</h2>
+            </header>
+            <section>
+                <ol>
+                    <li>No Dangerous Manoeuvres (Don’t be a danger to any other road users or yourself). Falling off causes pain to you and others around you, don’t do it! (oh and you loose yer points)</li>
+                    <li>Don’t ride like a jerk, we’re all just trying to get somewhere!</li>
+                    <li>No passing at Lights/Junction/Crossings, if you do, it doesn’t count</li>
+                    <li>All passing on open road ONLY. Filtering in traffic is null and void (you know whether you’ve dropped someone fairly, and haven’t turned off straight afterwards)
+                    <li>Pavement passes, either you or the target is void</li>
+                    <li>Show no pain, unless, like me your face is just like that</li>
+                </ol>
+            </section>
+        </article>
+
+        <article id="about" class="container">
+            <header>
+                <h2>About</h2>
+            </header>
+        </article>
+
+        <footer class="fixed-bottom bg-dark text-white px-3">
+            <p class="text-right">Concept credit to: <cite><a href="https://forum.bikeradar.com/discussion/12575770/silly-commuting-racing">Silly commuting racing</a></cite><br>
+                Code: &copy; 2020 Betsy Gamrat</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="js/code.js"></script>
+    </body>
+</html>
+
