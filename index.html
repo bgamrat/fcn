@@ -46,7 +46,7 @@
                 <h2 class="d-none">Calculator</h2>
             </header>
             <div id="fcn" class="sticky-top mt-2">
-                <p class="d-inline-block p-2 bg-dark text-light rounded">FCN <output id="output" class="badge badge-light">0</output></p>
+                <button type="button" class="btn btn-primary p-2 bg-dark text-light rounded" title="Click to get badge" data-toggle="modal" data-target="#makeBadge">FCN <output id="output" class="badge badge-light">0</output></button>
                 <button id="btn-reset" type="button" class="btn btn-light bg-white border border-dark">Reset</button> 
             </div>
             <section>
@@ -244,6 +244,30 @@
                 <h2>About</h2>
             </header>
         </article>
+        <div class="modal fade" id="makeBadge" data-keyboard="false" tabindex="-1" aria-labelledby="makeBadgeLabel" aria-hidden="true">
+            <div  class="modal modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="makeBadgeLabel">Download Badge Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" >
+                        <div class="mx-auto" style="width:372px">
+                            <canvas id="badge" width="372" height="218"> 
+                                An alternative text describing what your canvas displays. 
+                            </canvas> 
+                        </div>
+                        <a href="https://commons.wikimedia.org/wiki/File:Bike-icon.svg"><cite>https://commons.wikimedia.org/wiki/File:Bike-icon.svg</cite></a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a id="downloadLink" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer class="fixed-bottom bg-dark text-white px-3">
             <p class="text-right">Concept credit to: <cite><a href="https://forum.bikeradar.com/discussion/12575770/silly-commuting-racing">Silly commuting racing</a></cite><br>

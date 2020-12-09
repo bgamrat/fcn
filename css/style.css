@@ -9,6 +9,11 @@ legend {
     font-size: 1.2em;
     font-weight: 700;
 }
+#badge {
+    border-radius: 30px 30px;
+    border-color: #360;
+    box-shadow: 0 0 25px #000;
+}
 @media (min-width: 720px) {
     .height-controlled fieldset.col-md {
         height: 175px;
